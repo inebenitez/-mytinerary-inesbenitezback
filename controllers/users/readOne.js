@@ -2,7 +2,7 @@ import User from "../../models/User.js";
 
 export default async (req, res) => {
     try {
-        let oneUser = await User.findOne({_id:req.params.id}).select("name mail photo -_id") //select para indicar lo que quiero leer separado por espacio
+        let oneUser = await User.findOne({_id:req.params.id}).select("name mail photo -_id") //select indica que quiero leer - va espacio
         return res.status(200).json({
             success: true,
             message: 'User found',

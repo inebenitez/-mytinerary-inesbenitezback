@@ -1,11 +1,11 @@
 import User from "../../models/User.js";
 
-export default async (req, res) => {
+export default async (req,res) => {
     try {
         let updatedUser = await User.findByIdAndUpdate(
             req.params.u_id,
             req.body,
-            {new:true} // por default - false y devuelve el objeto ANTES de la modificacion
+            {new:true} // por default false y devuelve el objeto ANTES de la modificacion
         ).select("name photo mail")
         return res.status(200).json({
             success: true,
