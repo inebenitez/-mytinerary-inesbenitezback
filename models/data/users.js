@@ -25,9 +25,9 @@ const users = [{
     country: "Argentina"
 }]
 
-connect(process.env.LINK_DB)
+    connect(process.env.LINK_DB)
     .then(()=>{
         User.insertMany(users)
-        console.log('done!');
+        console.log('done');
     })
     .catch(err=>console.log(err))

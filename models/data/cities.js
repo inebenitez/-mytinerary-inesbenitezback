@@ -129,9 +129,9 @@ async function createCities(arrayCities) {
     try {
         await connect(process.env.LINK_DB)
         for (let city of arrayCities) {
-            let user = await User.findOne({ mail:city.admin_id })   //busca el usuario que tenga conincidencia con el mail del objeto
-            let admin_id = await user._id                                 //SOLO necesito su id
-            city.admin_id = admin_id                                //reasigno valor del admin_id de cada ciudad para cambiar el mail que viene por default POR LO QUE CORRESPONDE (QUE SERIA EL ID)
+            let user = await User.findOne({ mail:city.admin_id })   //busco usuario que conincida con mail del objeto
+            let admin_id = await user._id                           //SOLO necesito su id
+            city.admin_id = admin_id                                //reasigno el valor del admin_id de cada ciudad para cambiar el mail que viene por default POR LO QUE CORRESPONDE (QUE SERIA EL ID)
             await City.create(city)
         }
         console.log('done');

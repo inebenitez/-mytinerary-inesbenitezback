@@ -1,11 +1,9 @@
 import { model,Schema } from 'mongoose';
 
 //espacio virtual de coleccion
-
 let collection ='users'
 
-//definir schema de datos del modelo
-//el MOLDE/FORMA
+//definir schema de datos del modelo - el MOLDE/FORMA
 let schema = new Schema({
     name: { type:String,required:true },
     lastName: { type:String },                      // es opcional
