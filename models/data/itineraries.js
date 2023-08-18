@@ -134,15 +134,17 @@ const itineraries = [{
 
 async function createItineraries(arrayItineraries) {
     try {
-        await connect(process.env.LINK_DB, { useNewUrlParser: true, useUnifiedTopology: true });
-        for (let itinerary of arrayItineraries) {            
-            let city = await City.findOne({ city: itinerary.city_id });            
-            itinerary.city_id = city._id;
-            await Itinerary.create(itinerary);
+        await connect(process.env.LINK_DB);
+        for (let itinerary of arrayItineraries) {
+            let city = await City.findOne({ city:itinerary.city_id }) 
+            let city_id = await city._id                           
+            itinerary.city_id = city_id  
+            await Itinerary.create(itinerary); 
         }
-        console.log('done');
+        console.log('done!');
     } catch (error) {
         console.log(error);
     }
 }
-createItineraries(itineraries);
+
+createItineraries(itineraries); 

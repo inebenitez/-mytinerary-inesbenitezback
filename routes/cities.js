@@ -8,19 +8,16 @@ import destroy from "../controllers/cities/destroy.js";
 const router = express.Router();
 
 //CREATE
-router.post("/", create);
+router.post("/", create)
 
 //READ
-router.get("/",read);
-router.get("/:id",readOne);
+router.get("/",read)
+router.get("/:id",readOne)
 
 //UPDATE
-router.put("/:id",update);
+router.put("/:id",update)
 
 //DESTROY
-router.delete("/:id", destroy);
+router.delete("/:id", destroy)
 
 export default router;
-
-
-

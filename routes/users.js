@@ -9,14 +9,11 @@ let router = express.Router();
 
 //CREATE
 router.post('/',create);
-
 //READ
 router.get('/',read);
 router.get('/:id',readOne)
-
 //UPDATE
-router.put('/:u_id',update);
-
+router.put('/:id',update);
 //DESTROY
 router.delete('/:id', destroy)
 
