@@ -8,7 +8,7 @@ let schema = new Schema({
     photo: { type:String,required:true },
     city: { type:String,required:true },
     description: { type:String,default:"edit later" },
-    smalldescription: { type:String,default:"edit later" },
+    smallDescription: { type:String,default:"edit later" },
     featuredLocation: { type:String,default:"edit later" },
     admin_id: { type:Types.ObjectId,required:true,ref:'users' }
 })
