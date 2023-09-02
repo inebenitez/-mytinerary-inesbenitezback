@@ -1,4 +1,5 @@
 import City from "../../models/City.js";
+
 export default async (req, res, next) => {
     try {
         let deletedCity = await City.findByIdAndDelete(req.params.id)
