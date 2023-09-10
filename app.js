@@ -1,7 +1,7 @@
 // IMPORTS
 import 'dotenv/config.js'
 import __dirname from './utils.js';
-import createError from 'http-errors';                                                // crea errores
+//import createError from 'http-errors';                                                // crea errores
 import express from  'express';                                                       // provee metodos y propiedades
 import path from 'path';                                                              // concoer ubicacion de servidor
 import logger from 'morgan';                                                          // registrar cada peticion

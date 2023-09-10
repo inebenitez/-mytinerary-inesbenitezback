@@ -5,7 +5,7 @@ export default (req,res,next) => {
             message: "user logger in with token",
             response: {
                 token: req.token,
-                user: req.user,
+                user: req.user
             }
         });
     }catch (error) {
