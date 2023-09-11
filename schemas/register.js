@@ -8,11 +8,14 @@ let registerSchema = joi.object({
         'string.empty': "name is required",
     }),
     mail: joi.string().required().email().messages({
-        "any.required": "mail is required",
-        "string.empty": "mail is required",
-        "string.email": "invalid mail",
+        "any.required": "Email is required.",
+        "string.empty": "Email cannot be empty.",
+        "string.email": "Invalid email address format. Please enter a valid email address.",
     }),
-    password: joi.string(),
+    password: joi.string().required().min(6).alphanum().messages({
+        "string.min": "password must have at least 6 characters please!",
+        "string.alphanum": "password must be alphanumeric please!",
+    }),
     country: joi.string().required().min(3).max(20).messages({
         "string.min": "country must have at least 3 characters please!",
         "string.max": "country must be less than 21 characters please!",
@@ -25,3 +28,4 @@ let registerSchema = joi.object({
     })
 })
 export default registerSchema
+

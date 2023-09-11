@@ -8,7 +8,7 @@ export default (req, res, next) => {
             { expiresIn: 60 * 60 * 24 * 7 ,}   //expiración en segundos
         )
         req.token = token;
-        //console.log(req.token);
+        console.log(req.token);
         return next()
     } catch (error) {
         return next(error);

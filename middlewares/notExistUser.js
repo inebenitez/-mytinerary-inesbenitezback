@@ -1,8 +1,9 @@
 import User from "../models/User.js";
 
 export default async(req,res,next) => {
+    console.log(req.body)
     try{
-        let one = await User.findOne({ mail: req.body.mail }, "_id -__v -password");
+        let one = await User.findOne({ mail: req.body.mail }, "-_id -__v -password");
         if(!one) {
             return res.status(400).json({
                 success: false,
@@ -11,8 +12,8 @@ export default async(req,res,next) => {
             });
         }else{
             req.user = one;
-            // console.log(req.user)
-            return(next);
+            console.log(req.user)
+            return next();
         }
     }catch (error) {
         return next(error);
