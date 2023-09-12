@@ -25,7 +25,9 @@ let registerSchema = joi.object({
     lastName: joi.string().required().min(2).max(25).messages({
         'string.min': "lastname mast have at least 3 characters please!",
         'string.max': "lasstname mast be less than 25 caracteres please!",
-    })
+    }),
+    photo: joi.string().required(),
+    
 })
 export default registerSchema
 
